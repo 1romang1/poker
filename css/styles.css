@@ -1,23 +1,22 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     margin: 0 auto;
-    border: 1px solid #000;
-    border-radius: 15px;
-    width: 40%;
-    min-height: 100vh;
-    background-color: #fff;
-    
 }
 
-.header h1 {
+.header {
+    flex-shrink: 0;
+    background: #000000;
+    min-height: 25px;
+}
+
+h1 {
     text-align: center;
-    color: #000
-}
-
-.nav {
-    min-height: 50px;
-    background-color: #006633;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    color: #fff;
 }
 
 .nav-links {
@@ -31,7 +30,7 @@
 
 .nav-links li {
     font-size: large;
-    color: #fff;
+    color: #fff000;
 }
 
 .nav-links a {
@@ -56,20 +55,14 @@ a:hover {
 }
 
 .main {
-    width: 40%;
-    min-height: 100vh;
+    /* margin: 0 auto; */
+    padding-top: 5px;
+    flex: 1;
+    max-width: 500px;
 
 }
 
-.button-new-game {
-    display: block;
-    position: absolute;
-    top: 50%;
-    margin-top: -0.625em;
-    width: 300px;
-    height: 130px;
-    border-radius: 25px;
-    font-size: 40px;
-    background-color: #fff;
-    border: 1px solid #000;
+.footer {
+    flex-shrink: 0;
+    background-color: #000;
 }
