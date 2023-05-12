@@ -19,25 +19,19 @@ let roma = {
         obj.stackInGame = obj.stackInGame + numberOfStakcs;
 
     },
-    /*returnStakInBank: function (stack) {
-        this.stackInGame = this.stackInGame - stack;
-        this.stackFromBank += stack;
-    }*/
-
-//доработать метод изменения значения стэка в банке
-
+    
     returnStakInBank: function (commonBank, numberOfStakcs) {
         this.stackInGame = this.stackInGame - numberOfStakcs;
         this.stackFromBank = this.stackFromBank + numberOfStakcs;
         let playersInBankArray = Object.keys(commonBank);
         for (var i = 0; i < playersInBankArray.length; i++) {
             if (playersInBankArray[i] == this.name) {
-             //commonBank.playersInBankArray[i] = commonBank.playersInBankArray[i] + numberOfStakcs;
-             commonBank['this.name'] = this.stackFromBank + numberOfStakcs;
-             //myObj['name']=value
-             //myObj['name']=value
+                let steckToTheBank = this.name;
+                console.log(commonBank[steckToTheBank] = commonBank[steckToTheBank] + numberOfStakcs);
+                //console.log(commonBank['this.name'] = this.stackFromBank); не правильно работает
+
             }
-       }
+        }
     }
 }
 
@@ -69,6 +63,3 @@ let vova = {
         this.stackFromBank += stack;
     }
 }
-console.log(commonBank);
-roma.returnStakInBank(commonBank, 1);
-console.log(commonBank);
