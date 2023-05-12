@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="main.js"></script>
+    <!-- <script src="addNewPlayer.js"></script> -->
 </head>
 
-<body>
+<body class="body">
     <header class="header">
         <div class="container">
             <h1>Texas Holdem Cash Game</h1>
         </div>
     </header>
-    <main class="main">
+    <main id="main" class="main">
         <div class="container">
-            <article>Правила пользования Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo animi sapiente
+            <article id="article">Правила пользования Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quo animi sapiente
                 mollitia nobis esse porro debitis libero perferendis delectus, iusto quos, saepe, numquam doloremque
                 blanditiis quibusdam quia aliquid corrupti obcaecati.
             </article>
-            <button>Добавить игрока</button>
+            <button id="newGameBtn">Новая ира</button>
         </div>
     </main>
     <footer class="footer">
@@ -31,12 +33,24 @@
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a target="_blank" href="html/historyOfGames.html">История игр</a></li>
-                    <li><button>Добавить игрока</button></li>
+                    <li><button id="addNewPlayerBtn">Добавить игрока</button></li>
                 </ul>
             </nav>
         </div>
     </footer>
-
+    <script>
+        window.onload = function () {
+            let addNewPlayerBtn = document.getElementById('addNewPlayerBtn');
+            let newGameBtn = document.getElementById('newGameBtn');
+            addNewPlayerBtn.addEventListener('click', addNewPlayer);
+            function addNewPlayer() {
+                let addDiv = document.createElement('div');
+                addDiv.className = 'newPlayer';
+                addDiv.innerHTML = 'New player';
+                newGameBtn.after(addDiv);
+            }
+        }
+    </script>
 </body>
 
 </html>

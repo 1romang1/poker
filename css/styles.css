@@ -1,11 +1,14 @@
-body {
+.body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+
 }
 
 .container {
     margin: 0 auto;
+    padding: 5px;
 }
 
 .header {
@@ -59,7 +62,7 @@ a:hover {
     background-image: radial-gradient(circle at 50% -20.71%, #cad7f9 0, #d0d6f9 6.25%, #d5d4f7 12.5%, #dbd3f5 18.75%, #e0d2f3 25%, #e5d0f0 31.25%, #eacfed 37.5%, #eecee9 43.75%, #f2cde5 50%, #f5cce1 56.25%, #f8ccdc 62.5%, #facbd8 68.75%, #fbcbd3 75%, #fccccf 81.25%, #fccccb 87.5%, #fcccc7 93.75%, #fbcdc3 100%);
     padding-top: 5px;
     flex: 1;
-    max-width: 500px;
+        max-width: 500px;
 }
 
 article {
@@ -69,4 +72,12 @@ article {
 .footer {
     flex-shrink: 0;
     background-color: rgb(239, 35, 60);
+}
+
+.newPlayer {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    font-size: xx-large;
+    border: 4px double black;
 }

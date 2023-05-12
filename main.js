@@ -1,40 +1,74 @@
-let bank = {};
-let players = [];
-// let roma = {};
-// let vova = {};
-// let sasha = {};
-// let stas = {};
-// let artur = {};
 
-// функция добавления стека игроку
-let addOfStack = function (nameOfPlayer) {
 
+
+
+let commonBank = {
+    Roma: -1,
+    Stas: -1,
+    Vova: -1
 }
 
-// функция создания игрока
-function Player(name, stack) {
-    this.name = name;
-    this.stack = stack;
+let keysOfBank = Object.keys(commonBank);
+
+let roma = {
+    name: 'Roma',
+    stackFromBank: -1,
+    stackInGame: 1,
+    giveAStack: function (obj, numberOfStakcs) {
+        this.stackInGame = this.stackInGame - numberOfStakcs;
+        obj.stackInGame = obj.stackInGame + numberOfStakcs;
+
+    },
+    /*returnStakInBank: function (stack) {
+        this.stackInGame = this.stackInGame - stack;
+        this.stackFromBank += stack;
+    }*/
+
+//доработать метод изменения значения стэка в банке
+
+    returnStakInBank: function (commonBank, numberOfStakcs) {
+        this.stackInGame = this.stackInGame - numberOfStakcs;
+        this.stackFromBank = this.stackFromBank + numberOfStakcs;
+        let playersInBankArray = Object.keys(commonBank);
+        for (var i = 0; i < playersInBankArray.length; i++) {
+            if (playersInBankArray[i] == this.name) {
+             //commonBank.playersInBankArray[i] = commonBank.playersInBankArray[i] + numberOfStakcs;
+             commonBank['this.name'] = this.stackFromBank + numberOfStakcs;
+             //myObj['name']=value
+             //myObj['name']=value
+            }
+       }
+    }
 }
 
-let newPlayer = new Player("Roma", 1);
-players.push(newPlayer);
-
-let newPlayer1 = new Player("Stas", 1);
-players.push(newPlayer1);
-
-let stackCalculate = function() {
-// найти нужный объект в массиве через перебор массива и сравнения со значением name необхожимого объекта
-players.find(() => players.name == "Roma")
-console.log(players.name);
-
+let stas = {
+    name: 'Stas',
+    stackFromBank: -1,
+    stackInGame: 1,
+    giveAStack: function (obj, numberOfStakcs) {
+        this.stackInGame = this.stackInGame - numberOfStakcs;
+        obj.stackInGame = obj.stackInGame + numberOfStakcs;
+    },
+    returnStakInBank: function (stack) {
+        this.stackInGame = this.stackInGame - stack;
+        this.stackFromBank += stack;
+    }
 }
 
-stackCalculate()
-//console.log(players[0].stack = players[0].stack + players[1].stack)
+let vova = {
+    name: 'Vova',
+    stackFromBank: -1,
+    stackInGame: 1,
+    giveAStack: function (obj, numberOfStakcs) {
+        this.stackInGame = this.stackInGame - numberOfStakcs;
+        obj.stackInGame = obj.stackInGame + numberOfStakcs;
 
-//$("p").click(function(){
-    //var newPerson = new Person("John", "Doe", "50", "blue");
-   // people.push(newPerson);
-   // console.log("A new person has been created!");
-//});
+    },
+    returnStakInBank: function (stack) {
+        this.stackInGame = this.stackInGame - stack;
+        this.stackFromBank += stack;
+    }
+}
+console.log(commonBank);
+roma.returnStakInBank(commonBank, 1);
+console.log(commonBank);
