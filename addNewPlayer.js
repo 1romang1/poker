@@ -15,27 +15,20 @@ function AddNewPlayer(name, stackInGame) {
     this.addPlayersId = function (arr) {
         let lengthOfArray = arr.length;
         if (lengthOfArray === 0) {
-           this.id = 1;
-           arrayOfPlayersId.push(1);
+            this.id = 1;
+            arrayOfPlayersId.push(1);
         } else {
-           this.id = lengthOfArray + 1;
-           arrayOfPlayersId.push(lengthOfArray + 1);
-       }
-    }
-}
+            this.id = lengthOfArray + 1;
+            arrayOfPlayersId.push(lengthOfArray + 1);
+        };
+    };
 
-let test = new AddNewPlayer('Roma', 1)
-console.log(arrayOfPlayersId);
+    this.giveAStack = function (obj, numberOfStakcs) {
+        this.stackInGame = this.stackInGame - numberOfStakcs;
+        obj.stackInGame = obj.stackInGame + numberOfStakcs;
+    };
+};
+
+let test = new AddNewPlayer('Roma', 1);
 test.addPlayersId(arrayOfPlayersId);
-console.log(arrayOfPlayersId)
-console.log(test.id)
-
-let anotherTest = new AddNewPlayer('Stas', 1)
-anotherTest.addPlayersId(arrayOfPlayersId)
-console.log(arrayOfPlayersId)
-console.log(anotherTest.id)
-
-let thirdTest = new AddNewPlayer ('Vova', 1);
-thirdTest.addPlayersId(arrayOfPlayersId)
-console.log(arrayOfPlayersId)
-console.log(thirdTest.id)
+console.log(test)
